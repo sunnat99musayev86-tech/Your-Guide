@@ -1,6 +1,22 @@
-Please finalize the complete App.js code for the "AI Voice Tutor" with all features fully integrated:
-1. Interactive UI: Make every top element (Balance badge with paywall modal, Profile avatar, Settings, Notifications), scenario card (Job Interview, Airport Customs, Ordering Coffee), and bottom tag (Figma, Team template) fully clickable and interactive.
-2. Human-like AI & Auto-Language Detection: Update the Gemini API system prompt so the AI acts as a warm, empathetic human tutor who automatically detects the user's spoken language and replies naturally in the exact same language (concise 1-3 sentences).
-3. Speech Integration: Process audio via Groq Whisper API, send to Gemini, and dynamically set `expo-speech` language options to match the response language.
-4. Monetization & Balance: Deduct balance during voice sessions and open the paywall modal ($1.99 / 60m, $4.99 / 300m, 'Watch Ad for +5 mins') when clicking the balance badge.
-Ensure all imports, styles, and safe environment variable handling (.env hidden from GitHub) are clean and ready for final commit.
+Создай веб-приложение AI-репетитора с минималистичным и современным интерфейсом (Dark Mode).
+
+1. 3D-АВАТАР И УНИКАЛЬНАЯ АНИМАЦИЯ (Three.js):
+- Отобрази 3D-модель из файла `/public/male.glb` через Three.js.
+- ДЫХАНИЕ И МОРГАНИЕ: Плавное покачивание грудной клетки/головы и автоматическое моргание каждые 3–5 секунд.
+- ЭФФЕКТ ЖИВОГО ВЗГЛЯДА: Глаза и голова аватара плавно следят за движением пальца или курсора по экрану (LookAt / IK targeting).
+- ДИНАМИЧЕСКИЕ ЭМОЦИИ: Переход мимики через blendshapes (`mouthSmile` при приветствии, `browInnerUp` при задумчивости, легкие кивки головы при согласии).
+- LIP-SYNC И ПЕРЕБИВАНИЕ (Barge-in): Реализуй движение рта в такт звуку через Web Audio API. Если пользователь начинает говорить или нажимает микрофон во время речи ИИ — моментально останавливай аудио и сбрасывай анимацию рта.
+
+2. ИНТЕЛЛЕКТ И СТИЛЬ ОБЩЕНИЯ (Дружеский репетитор):
+- АВТООПРЕДЕЛЕНИЕ ЯЗЫКА (Automatic Language Detection): Распознавай язык ввода пользователя (узбекский, русский, английский и др.) и автоматически отвечай на том же языке без переключения настроек.
+- ТОН ОБЩЕНИЯ (Friend & Mentor): ИИ говорит естественным языком, как близкий друг или заботливый наставник (без сухого академического тона, с поддержкой и юмором).
+
+3. ИНТЕРФЕЙС И ФУНКЦИОНАЛ:
+- СВЕРХУ: Таймер обратного отсчета 3-дневного триала (3 дня 00:00:00) и яркая кнопка оплаты подписки.
+- КНОПКА ПОМОЩИ (Help / Подсказки): В углу добавь плавающую кнопку «?» (Помощь). При нажатии выводи всплывающую карточку с подсказками (например: «О чем спросить?», «Как тренировать произношение», «Как сменить тему»).
+- 3D-ПОДСКАЗКИ (HUD): Над головой аватара выводи стильные полупрозрачные плашки с ключевыми словами, правилами или переводом фразы.
+- СНИЗУ ПО ЦЕНТРУ: Крупная минималистичная кнопка микрофона с пульсирующим неоновым кольцом во время записи.
+- ТАКТИЛЬНЫЙ ОТКЛИК: Вызывай `navigator.vibrate(12)` при любых кликах и взаимодействиях.
+
+4. АДАПТИВНОСТЬ:
+- Полностью мобильная верстка на весь экран без скролла.
